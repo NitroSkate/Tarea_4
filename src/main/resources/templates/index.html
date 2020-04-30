@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="post" th:action="@{/validar}" th:object="${producto}">
+		<label for="codigo">Codigo de producto: </label>
+		<input th:field="*{codigo}" id="codigo" type="text" placeholder="Ingrese el codigo de producto" name="codigo">
+		<span th:errors="*{codigo}" style="color: #FF0000"></span>
+		<input type="submit" value="Guarda producto">
+	</form>
+</body>
+</html>
