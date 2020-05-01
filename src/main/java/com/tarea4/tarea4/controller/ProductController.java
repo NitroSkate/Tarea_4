@@ -16,7 +16,7 @@ public class ProductController {
 	@RequestMapping("/product")
 	public ModelAndView product() {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("producto", new Product());
+		mav.addObject("product", new Product());
 		mav.setViewName("index");
 		return mav;
 	}
@@ -29,7 +29,7 @@ public class ProductController {
 			mav.setViewName("index");
 		}
 		else {
-			mav.addObject("producto", producto.getCodigo());
+			mav.addObject("producto", producto.getNombrep());
 			mav.setViewName("resultado");
 		}
 		return mav;

@@ -5,10 +5,31 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form method="post" th:action="@{/validar}" th:object="${producto}">
+	<form method="post" th:action="@{/validar}" th:object="${product}">
 		<label for="codigo">Codigo de producto: </label>
-		<input th:field="*{codigo}" id="codigo" type="text" placeholder="Ingrese el codigo de producto" name="codigo">
+		<input th:field="*{codigo}" id="codigo" type="text" placeholder="Ingrese el codigo de producto" name="codigo"/>
 		<span th:errors="*{codigo}" style="color: #FF0000"></span>
+		<br>
+		<label for="nombrep">Nombre de producto: </label>
+		<input th:field="*{nombrep}" id="nombrep" type="text" placeholder="Ingrese el nombre de producto" name="nombrep"/>
+		<span th:errors="*{nombrep}" style="color: #FF0000"></span>
+		<br>
+		<label for="marca">Marca de producto: </label>
+		<input th:field="*{marca}" id="marca" type="text" placeholder="Ingrese la marca de producto" name="marca"/>
+		<span th:errors="*{marca}" style="color: #FF0000"></span>
+		<br>
+		<label for="descrip">Descripcion de producto: </label>
+		<input th:field="*{descrip}" id="descrip" type="text" placeholder="Ingrese el codigo de producto" name="descrip"/>
+		<span th:errors="*{descrip}" style="color: #FF0000"></span>
+		<br>
+		<label for="exis">Existencia de producto: </label>
+		<input th:field="*{exis}" id="exis" type="text" placeholder="Ingrese la existencia del producto" name="exis"/>
+		<span th:errors="*{exis}" style="color: #FF0000"></span>
+		<br>
+		<label for="fechai">Fecha de ingreso de producto: </label>
+		<input th:field="*{fechai}" id="fechai" type="text" placeholder="Formato dd/mm/yyyy" name="fechai"/>
+		<span th:errors="*{fechai}" style="color: #FF0000"></span>
+		<br>
 		<input type="submit" value="Guarda producto">
 	</form>
 </body>

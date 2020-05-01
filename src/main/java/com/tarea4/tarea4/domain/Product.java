@@ -1,22 +1,28 @@
 package com.tarea4.tarea4.domain;
 
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class Product {
 	
-	@Size(min=1,max=10)
+	@Size(min=12,max=12, message= "Introduzca los 12 digitos del codigo de producto")
+	@Digits(integer=12, fraction=0, message= "Numeros enteros solamente")
 	String codigo;
-	@Size(min=1,max=10)
+	@Size(min=1,max=100, message= "Introduzca entre 1 y 100 caracteres en el Nombre de Producto")
 	String nombrep;
-	@Size(min=1,max=10)
+	@Size(min=1,max=100, message= "Introduzca entre 1 y 100 caracteres en la Marca")
 	String marca;
-	@Size(min=1,max=10)
+	@Size(min=1,max=500, message= "Introduzca entre 1 y 500 caracteres en la descripcion del producto")
 	String descrip;
-	@Size(min=1,max=10)
+	@Digits(integer=10, fraction=0, message= "Numeros enteros solamente")
 	String exis;
-	@Size(min=1,max=10)
+	@Pattern(regexp="^([0-2][0-9]||3[0-1])/(0[0-9]||1[0-2])/([0-9][0-9])?[0-9][0-9]$")
 	String fechai;
 	
+	public Product() {
+		
+	}
 	
 	public String getCodigo() {
 		return codigo;
